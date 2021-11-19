@@ -69,6 +69,7 @@
                             <label for="staffPosition" class="col-form-label me-3">員工職稱</label>
                           </div>
                           <select class="form-select me-3" name="staffPosition" id="staffPosition" aria-label="Default select example">
+                            <option selected>選擇職位</option>
                             <option value="新進人員">新進人員</option>
                             <option value="主管">主管</option>
                             <option value="經理">經理</option>

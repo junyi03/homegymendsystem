@@ -59,6 +59,7 @@
                                     <label for="inputMemberId" class="col-form-label ">課程分類</label>
                                   </div>
                                   <select class="form-select ms-3 me-2" name="partOfBody">
+                                    <option selected>請選擇要查詢的分類</option>
                                     <option  value="0" >全部</option>
                                     <option value="全身">全身</option>
                                     <option value="背">背 </option>

@@ -58,7 +58,8 @@
                                     <label for="inputMemberId" class="col-form-label ">審核狀態</label>
                                   </div>
                                   <select class="form-select  ms-3 me-2" aria-label="Default select example" name="status">
-                                    <option selected  value="2">全部</option>
+                                    <option selected >請選擇審核狀態</option>
+                                    <option  value="2">全部</option>
                                     <option value="1">通過</option>
                                     <option value="0">未通過</option>
                                   </select>                                 
@@ -70,6 +71,7 @@
                                     <label for="inputMemberId" class="col-form-label ms-2">課程分類</label>
                                   </div>
                                   <select class="form-select ms-3 me-2" aria-label="Default select example" name="partOfBody">
+                                   <option selected>請選擇課程分類</option>
                                    <option value="0" >全部</option>
                                     <option value="全身">全身</option>
                                     <option value="背">背</option>

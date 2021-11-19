@@ -54,7 +54,7 @@
 										<label for="inputStaffId" class="col-form-label me-2">員工編號</label>
 									</div>
 									<input class="form-control me-2" id="inputStaffId" type="text"
-										placeholder="Search" name="inputId" value="${param.inputId}">
+										placeholder="請搜尋員工編號" name="inputId" value="${param.inputId}">
 									<button class="btn btn-outline-primary col-auto" type="submit">查詢</button>
 								</div>
 							</div>
@@ -67,7 +67,7 @@
 										<label for="inputStaffName" class="col-form-label me-2">員工姓名</label>
 									</div>
 									<input class="form-control me-2" id="inputStaffName"
-										type="text" placeholder="Search" name="inputName" value="${param.inputName}">
+										type="text" placeholder="請搜尋員工姓名" name="inputName" value="${param.inputName}">
 									<button class="btn btn-outline-primary col-auto" type="submit">查詢</button>
 								</div>
 							</div>
@@ -80,7 +80,7 @@
 										<label for="inputStaffPhone" class="col-form-label me-2">員工電話</label>
 									</div>
 									<input class="form-control me-2" id="inputStaffPhone"
-										type="text" placeholder="Search" name="inputPhone" value="${param.inputPhone}">
+										type="text" placeholder="請搜尋員工電話" name="inputPhone" value="${param.inputPhone}">
 									<button class="btn btn-outline-primary col-auto" type="submit">查詢</button>
 								</div>
 							</div>
@@ -359,6 +359,7 @@
 									<select class="form-select me-3"
 										aria-label="Default select example" name="staffPosition"
 										value="${param.staffPosition}">
+										<option selected>選擇職位</option>
 										<option value="新進員工">新進員工</option>
 										<option value="主管">主管</option>
 										<option value="經理">經理</option>
@@ -399,11 +400,7 @@
 	</form>
 
 
-<!-- <script> -->
-// function SE(){
-// 	var x = document.getElementById("ZXC").selected = false;
-// }
-<!-- </script> -->
+
 
 
 

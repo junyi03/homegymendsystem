@@ -50,7 +50,7 @@
 	                            <label for="inputOrderId" class="col-form-label me-2">訂單查詢</label>
 	                          </div>
 	                          <input class="form-control me-2" id="inputOrderId" type="text" 
-	                          		placeholder="Search" aria-label="Search" name="inputValue" value="${param.inputValue }">
+	                          		placeholder="請搜尋訂單編號或會員名稱" aria-label="Search" name="inputValue" value="${param.inputValue }">
 	                          <button class="btn btn-outline-primary col-auto" type="submit">查詢</button>
 	                        </div>
 	                     </div>

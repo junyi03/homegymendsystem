@@ -58,6 +58,7 @@
                             <label for="inputMemberIdentity" class="col-form-label me-2">會員身份</label>
                           </div>
                           <select class="form-select ms-2 me-2"  name="role">
+                            <option selected>請選擇要查詢的會員身分</option>
                             <option value="0" >全部</option>
                             <option value="會員">會員</option>
                             <option value="教練">教練</option>
