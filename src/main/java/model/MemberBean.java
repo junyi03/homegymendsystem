@@ -2,7 +2,6 @@ package model;
 
 
 import java.io.Serializable;
-import java.sql.Blob;
 import java.sql.Date;
 import java.sql.Timestamp;
 import java.util.HashSet;
@@ -42,10 +41,15 @@ public class MemberBean implements Serializable {
 	@Column(name="role")
 	private String role;
 	@Column(name = "member_image")
-	private Blob memberPicture;
+	private byte[] memberPicture;
 	@Column(name = "create_time")
 	private Timestamp registerTime;
-	
+	@Column(name = "status")
+	private Integer status;
+	@Column(name = "code")
+	private String code;
+	@Column(name = "mine_type")
+	private String minetype;
 	
 	@OneToOne(cascade =CascadeType.PERSIST)
 	@JoinColumn(name = "coach_id")
@@ -60,8 +64,8 @@ public class MemberBean implements Serializable {
 	
 
 	public MemberBean(Integer memberId, String memberPassword, String memberName, String email, String phone,
-			Date birthday, String role, Blob memberPicture, Timestamp registerTime, CoachBean coach,
-			Set<OrderBean> order) {
+			Date birthday, String role, byte[] memberPicture, Timestamp registerTime, CoachBean coach,
+			Set<OrderBean> order, Integer status, String code, String minetype) {
 		super();
 		this.memberId = memberId;
 		this.memberPassword = memberPassword;
@@ -73,6 +77,9 @@ public class MemberBean implements Serializable {
 		this.memberPicture = memberPicture;
 		this.registerTime = registerTime;
 		this.coach = coach;
+		this.status = status;
+		this.code = code;
+		this.minetype = minetype;
 //		this.order = order;
 	}
 
@@ -148,11 +155,11 @@ public class MemberBean implements Serializable {
 		this.role = role;
 	}
 
-	public Blob getMemberPicture() {
+	public byte[] getMemberPicture() {
 		return memberPicture;
 	}
 
-	public void setMemberPicture(Blob memberPicture) {
+	public void setMemberPicture(byte[] memberPicture) {
 		this.memberPicture = memberPicture;
 	}
 
@@ -175,6 +182,42 @@ public class MemberBean implements Serializable {
 
 	public static long getSerialversionuid() {
 		return serialVersionUID;
+	}
+
+
+
+	public Integer getStatus() {
+		return status;
+	}
+
+
+
+	public void setStatus(Integer status) {
+		this.status = status;
+	}
+
+
+
+	public String getCode() {
+		return code;
+	}
+
+
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+
+
+	public String getMine_type() {
+		return minetype;
+	}
+
+
+
+	public void setMine_type(String mine_type) {
+		this.minetype = minetype;
 	}
 
 	

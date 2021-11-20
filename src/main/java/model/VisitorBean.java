@@ -25,6 +25,8 @@ public class VisitorBean implements Serializable {
 		private String visitorName;//訪客名字
 		@Column(name = "visitor_message")
 		private String visitorMessage;//訪客問題
+		@Column(name = "visitor_time")
+		private String visitorTime;
 		
 		
 		public String getVisitorMail() {
@@ -46,11 +48,21 @@ public class VisitorBean implements Serializable {
 			this.visitorMessage = visitorMessage;
 		}
 		
-		public VisitorBean(String visitorMail, String visitorName, String visitorMessage) {
+		
+		
+		
+		public String getVisitorTime() {
+			return visitorTime;
+		}
+		public void setVisitorTime(String visitorTime) {
+			this.visitorTime = visitorTime;
+		}
+		public VisitorBean(String visitorMail, String visitorName, String visitorMessage, String visitorTime) {
 			super();
 			this.visitorMail = visitorMail;
 			this.visitorName = visitorName;
 			this.visitorMessage = visitorMessage;
+			this.visitorTime = visitorTime;
 		}
 		public VisitorBean() {
 			

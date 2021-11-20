@@ -29,9 +29,11 @@ public class CoachBean implements Serializable {
 	private Integer id;
 	@Column(name = "experience")
 	private String experience;
-	@Column(name = "certification")
-	private Blob certification;
-	@Column(name = "coach_image")
+	
+	
+	@Column(name = "certification",columnDefinition = "LONGTEXT")
+	private String certification;
+	@Column(name = "coach_image",columnDefinition = "LONGTEXT")
 	private String coachImage;
 	@Column(name = "coach_info")
 	private String coachInfo;
@@ -48,7 +50,7 @@ public class CoachBean implements Serializable {
 	@Column(name = "apply_time")
 	private String applyTime;
 	@Column(name = "suspension")
-	private String suspension;
+	private Integer suspension;
 	
 
 	@OneToOne(mappedBy = "coach")
@@ -89,11 +91,11 @@ public class CoachBean implements Serializable {
 		this.experience = experience;
 	}
 
-	public Blob getCertification() {
+	public String getCertification() {
 		return certification;
 	}
 
-	public void setCertification(Blob certification) {
+	public void setCertification(String certification) {
 		this.certification = certification;
 	}
 
@@ -156,11 +158,11 @@ public class CoachBean implements Serializable {
 		this.applyTime = applyTime;
 	}
 
-	public String getSuspension() {
+	public Integer getSuspension() {
 		return suspension;
 	}
 
-	public void setSuspension(String suspension) {
+	public void setSuspension(Integer suspension) {
 		this.suspension = suspension;
 	}
 

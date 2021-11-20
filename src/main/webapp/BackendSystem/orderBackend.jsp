@@ -85,7 +85,7 @@
 	                          	</c:when>
 	                          </c:choose>
 	                          
-	                          <td><fmt:formatDate value="${entry.orderTime}" pattern="yyyy-MM-dd HH:mm"></fmt:formatDate></td>
+	                          <td>${entry.orderTime}</td>
 	                          <td><div class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#orderContent${entry.orderId}">訂單內容</div></td>
 	                        </tr>
                           </c:forEach>

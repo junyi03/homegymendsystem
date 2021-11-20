@@ -63,7 +63,7 @@
                                     </li>
                                     <li>
                                         <label class="col-auto col-form-label-lg me-3">申請時間</label> 
-                                        <span><fmt:formatDate value="${CoachBean.applyTime}" pattern="yyyy-MM-dd HH:mm"></fmt:formatDate></span>
+                                        <span>${CoachBean.applyTime}</span>
                                     </li>
                                     <li>
                                         <label class="col-auto col-form-label-lg me-3">審核時間</label> 

@@ -36,7 +36,7 @@ public class VideoBean implements Serializable {
 	private String category; //課程類別
 	@Column(name = "part_of_body")
 	private String partOfBody; //不確定會用數字還是字串來設定  //運動部位
-	@Column(name = "course_image")
+	@Column(name = "course_image",columnDefinition = "LONGTEXT")
 	private String videoImage;	//影片圖片
 	@Column(name = "mime_type")
 	private String mimeType;   // /dmot/src/main/java/_03_listBooks/service/impl/BookServiceImpl.java

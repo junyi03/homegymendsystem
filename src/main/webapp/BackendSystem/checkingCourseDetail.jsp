@@ -89,10 +89,10 @@
                                 <label class="col-sm-2 col-form-label-lg">課程適合程度:</label> 
                                 <span>Level${VideoBean.level}</span>
                                 </li>
-                                <li>
-                                <label class="col-sm-2 col-form-label-lg">課程分類:</label> 
-                                <span>${VideoBean.category}</span>
-                            </li>
+<!--                                 <li> -->
+<!--                                 <label class="col-sm-2 col-form-label-lg">課程分類:</label>  -->
+<!--                                 <span>${VideoBean.category}</span> -->
+<!--                             </li> -->
                             <li>
                                 <label class="col-sm-2 col-form-label-lg">價錢:</label> 
                                 <sapn>${VideoBean.price}</sapn>

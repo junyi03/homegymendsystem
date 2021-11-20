@@ -28,7 +28,7 @@ public class OrderBean implements Serializable {
 	@Column(name = "order_id")
 	String orderId;
 	@Column(name = "order_time")
-	Date orderTime;
+	String orderTime;
 	@Column(name = "total_amt")
 	Integer totalAmt;
 	@Column(name = "order_status")
@@ -114,11 +114,11 @@ public class OrderBean implements Serializable {
 	}
 
 
-	public Date getOrderTime() {
+	public String getOrderTime() {
 		return orderTime;
 	}
 
-	public void setOrderTime(Date orderTime) {
+	public void setOrderTime(String orderTime) {
 		this.orderTime = orderTime;
 	}
 
