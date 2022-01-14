@@ -48,7 +48,7 @@
                         <div class="row align-items-center">
                             <div class="col-4">
                                 <div class="mb-3 ms-4">
-                                    <img class="ratio ratio-1x1" src="<c:url value='https://fakeimg.pl/1280x1280/' />" alt="">
+                                    <img class="ratio ratio-1x1" src="<c:url value='${CoachBean.coachImage}' />" alt="">
                                 </div>
                             </div>
                             <div class="col-8">
@@ -110,6 +110,7 @@
     </section>
 
     <!-- 教練證照彈跳視窗 -->
+    
     <div class="modal fade" id="showPhotoLicense" tabindex="-1" aria-labelledby="showPhotoLicense" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
           <div class="modal-content">
@@ -118,7 +119,7 @@
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-              <img class="ratio ratio-1x1 " src="https://fakeimg.pl/1280x1280/" alt="">
+              <img class="ratio ratio-1x1 " src="${CoachBean.certification }" alt="">
             </div>
           </div>
         </div>

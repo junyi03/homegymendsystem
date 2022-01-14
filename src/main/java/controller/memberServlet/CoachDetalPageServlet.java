@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import model.CoachBean;
+import model.MemberBean;
 import service.MemberService;
 import service.serviceimpl.MemberServiceImpl;
 import util.GlobalService;
@@ -25,9 +26,9 @@ public class CoachDetalPageServlet extends HttpServlet {
 		MemberService memberService = new MemberServiceImpl();
 		
 		String memberId = request.getParameter("memberId");
-		
-		CoachBean coachBean = memberService.findCoachByFk(Integer.parseInt(memberId));
-		
+		MemberBean mb = memberService.findById(Integer.parseInt(memberId));
+		CoachBean coachBean = mb.getCoach();
+	
 		
 		try {
 			String  stringCoachInfo = coachBean.getCoachInfo();

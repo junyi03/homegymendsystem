@@ -95,14 +95,14 @@
                         </thead>
                         <tbody>
                         <c:forEach var="entry"  items="${pageBean.memberBean}" > 
-                        	<c:choose>
-								<c:when test="${entry.coach.checked == 0}">
+                        <%-- 	<c:choose>
+								<c:when test="${entry.coach.checked == 0}"> --%>
 									<tr>
 			                            <td>${entry.memberId}</td>
 			                            <td>${entry.memberName}</td>
 			                            <td>${entry.email}</td>
 			                            <td>${entry.coach.skill}</td>
-			                            <td><fmt:formatDate value="${entry.coach.applyTime}" pattern="yyyy-MM-dd HH:mm"></fmt:formatDate></td>
+			                            <td>${entry.coach.applyTime}</td>
 		                                <td>
 		                                <c:choose>
 							              <c:when test="${entry.coach.checked == 0}">待審核</c:when> 
@@ -110,9 +110,9 @@
 							           </c:choose>
 			                            <td><a href="<c:url value='/CoachDetalPageServlet?memberId=${entry.memberId}' />" class="btn btn-outline-dark">審核</a></td>
 			                        </tr>
-								</c:when> 
+							<%-- 	</c:when> 
 								<c:otherwise></c:otherwise> 
-							</c:choose>
+							</c:choose> --%>
                           
                         </c:forEach>
                         </tbody>

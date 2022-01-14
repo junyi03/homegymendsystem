@@ -60,8 +60,8 @@
                           <select class="form-select ms-2 me-2"  name="role">
                             <option selected>請選擇要查詢的會員身分</option>
                             <option value="0" >全部</option>
-                            <option value="會員">會員</option>
-                            <option value="教練">教練</option>
+                            <option value="ROLE_MEMBER">會員</option>
+                            <option value="ROLE_COACH">教練</option>
                           </select>  
                           <Input class="btn btn-outline-primary" type="submit" value='查詢' >
                           </div>
@@ -89,6 +89,7 @@
                           <th scope="col">會員信箱</th>
                           <th scope="col">會員電話</th>
                           <th scope="col">會員身份</th>
+                          <th scope="col">會員狀態</th>
                           <th scope="col">會員生日</th>
                           <th scope="col">會員大頭照 </th>
                           <th scope="col">教練資料 </th>
@@ -101,9 +102,21 @@
                           <td>${entry.memberName}</td>
                           <td>${entry.email}</td>
                           <td>${entry.phone}</td>
-                          <td>${entry.role}</td>
+                          <c:if test="${entry.role =='ROLE_MEMBER'}">
+	                          <td>會員</td>
+                          </c:if>
+                          <c:if test="${entry.role == 'ROLE_COACH'}">
+	                          <td>教練</td>
+                          </c:if>
+                          <c:if test="${entry.status == 1}">
+	                          <td>已驗證</td>
+                          </c:if>
+                          <c:if test="${entry.status == 0}">
+	                          <td class="text-danger">未驗證</td>
+                          </c:if>
+                       	
                           <td>${entry.birthday}</td>
-                          <td><div class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#showPhoto">預覽</div></td>
+                          <td><div class="btn btn-outline-dark" data-bs-toggle="modal" data-bs-target="#showPhoto${entry.memberId}">預覽</div></td>
                           <td>
                           	<c:choose>
 								<c:when test="${entry.coach.pass == 1}"><a href="<c:url value='/CoachDetalPageServlet?memberId=${entry.memberId}' />" class="btn btn-outline-dark">教練內容</a></c:when> 
@@ -218,19 +231,22 @@
   </section>
 
   <!-- 圖片預覽的彈跳視窗 -->
-  <div class="modal fade" id="showPhoto" tabindex="-1" aria-labelledby="showPhotoLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="showPhotoLabel">會員照片</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <img class="ratio ratio-1x1 " src="https://fakeimg.pl/1280x1280/" alt="">
-        </div>
-      </div>
-    </div>
-  </div>
+  <c:forEach var="page"  items="${pageBean.memberBean}" >
+	  <div class="modal fade" id="showPhoto${page.memberId }" tabindex="-1" aria-labelledby="showPhotoLabel" aria-hidden="true">
+	    <div class="modal-dialog modal-dialog-centered">
+	      <div class="modal-content">
+	        <div class="modal-header">
+	          <h5 class="modal-title" id="showPhotoLabel">會員照片</h5>
+	          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+	        </div>
+	        <div class="modal-body">
+	          <img class="ratio ratio-1x1 " src="${page.image}" alt="">
+	        </div>
+	      </div>
+	    </div>
+	  </div>
+  
+  </c:forEach>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>

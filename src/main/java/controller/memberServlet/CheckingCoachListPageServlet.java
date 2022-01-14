@@ -22,7 +22,7 @@ public class CheckingCoachListPageServlet extends HttpServlet {
 		int currentpage = 1;// 默認的當前頁
 		int pagesize = 5;// 每頁顯示的商品數
 		
-		String hql = "From MemberBean m  WHERE m.coach.id != null";
+		String hql = "From MemberBean m  WHERE m.coach.checked =0";
 		
 		String curpage = request.getParameter("pageNo");
 		

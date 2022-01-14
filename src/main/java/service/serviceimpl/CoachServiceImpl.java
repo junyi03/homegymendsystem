@@ -53,7 +53,7 @@ public class CoachServiceImpl implements CoachService {
 			coach.setChecked(checked);
 			coach.setCheckTime(sqlDate);
 			if(pass.equals("1")) {
-				coach.getMember().setRole("教練");
+				coach.getMember().setRole("ROLE_COACH");
 			}
 			coachDao.updatPassAndChecked(coach);
 			tx.commit();

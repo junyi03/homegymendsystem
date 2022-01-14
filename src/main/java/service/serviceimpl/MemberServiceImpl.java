@@ -2,6 +2,7 @@ package service.serviceimpl;
 
 import java.sql.Date;
 import java.text.SimpleDateFormat;
+import java.util.Base64;
 import java.util.Iterator;
 import java.util.List;
 
@@ -46,6 +47,18 @@ public class MemberServiceImpl implements MemberService {
 		   
 		   // 查詢到的當前頁面要顯示的商品
 		   List<MemberBean> course = memberDao.findMemberByPage(currentPage, pageSize, hql);
+		   System.out.println("出現出現出現出現出現出現出現出現出現出現出現出現出現出現出現");
+		   for(MemberBean mb:course) {
+			   if(mb.getMemberPicture()!=null) {
+				   String mimeType = mb.getMinetype();
+				   String baseString = Base64.getEncoder().encodeToString(mb.getMemberPicture());
+				   mb.setImage("data:"+mimeType+";base64,"+baseString);
+			   }
+		   }
+		   
+		   
+		   
+//		   data:image/png;base64,/2121213dkfnvaakmkmcdmvllsmclkfuih
 		   
 		   //////
 //		   Iterator iterator = course.iterator();

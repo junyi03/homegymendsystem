@@ -49,7 +49,7 @@ public class videoInsert {
 					
 					vb.setName(col[1]);
 					vb.setVideoInfo(col[2]);
-					vb.setCategory(col[3]);
+//					vb.setCategory(col[3]);
 					vb.setPartOfBody(col[4]);
 //					try {
 //						

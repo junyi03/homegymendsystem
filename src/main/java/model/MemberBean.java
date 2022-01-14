@@ -17,9 +17,10 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 @Entity
-@Table(name="member")
+@Table(name="`member`")
 public class MemberBean implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
@@ -50,6 +51,9 @@ public class MemberBean implements Serializable {
 	private String code;
 	@Column(name = "mine_type")
 	private String minetype;
+		
+	@Transient
+	private String image;
 	
 	@OneToOne(cascade =CascadeType.PERSIST)
 	@JoinColumn(name = "coach_id")
@@ -63,30 +67,60 @@ public class MemberBean implements Serializable {
 
 	
 
-	public MemberBean(Integer memberId, String memberPassword, String memberName, String email, String phone,
-			Date birthday, String role, byte[] memberPicture, Timestamp registerTime, CoachBean coach,
-			Set<OrderBean> order, Integer status, String code, String minetype) {
+
+	
+	
+	public MemberBean(Integer memberId, String memberPassword, String memberName, String email, String phone, Date birthday,
+		String role, byte[] memberPicture, Timestamp registerTime, Integer status, String code, String minetype,
+		String image, CoachBean coach, Set<OrderBean> order) {
+	super();
+	this.memberId = memberId;
+	this.memberPassword = memberPassword;
+	this.memberName = memberName;
+	this.email = email;
+	this.phone = phone;
+	this.birthday = birthday;
+	this.role = role;
+	this.memberPicture = memberPicture;
+	this.registerTime = registerTime;
+	this.status = status;
+	this.code = code;
+	this.minetype = minetype;
+	this.image = image;
+	this.coach = coach;
+	this.order = order;
+}
+
+
+
+	public MemberBean() {
 		super();
-		this.memberId = memberId;
-		this.memberPassword = memberPassword;
-		this.memberName = memberName;
-		this.email = email;
-		this.phone = phone;
-		this.birthday = birthday;
-		this.role = role;
-		this.memberPicture = memberPicture;
-		this.registerTime = registerTime;
-		this.coach = coach;
-		this.status = status;
-		this.code = code;
-		this.minetype = minetype;
-//		this.order = order;
 	}
 
 	
 	
-	public MemberBean() {
-		super();
+
+
+	public String getMinetype() {
+		return minetype;
+	}
+
+
+
+	public void setMinetype(String minetype) {
+		this.minetype = minetype;
+	}
+
+
+
+	public String getImage() {
+		return image;
+	}
+
+
+
+	public void setImage(String image) {
+		this.image = image;
 	}
 
 

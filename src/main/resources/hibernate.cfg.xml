@@ -8,6 +8,8 @@
 		<!-- SQL方言，設定是MySQL -->
 		<property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
 		<property name="hibernate.connection.username">root</property>
+<!-- 		<property name="hibernate.connection.password">cwBNpFzn3uMd7c7l</property> -->
+<!-- 		<property name="hibernate.connection.url">jdbc:mysql://35.229.196.186:3306/HomeGym</property> -->
 		<property name="hibernate.connection.password">bubuka7171</property>
 		<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/homegym?useUnicode=yes&amp;characterEncoding=utf8&amp;useSSL=false&amp;serverTimezone=Asia/Taipei&amp;allowPublicKeyRetrieval=true</property>
 		<property name="hibernate.dialect">org.hibernate.dialect.MySQL8Dialect</property>

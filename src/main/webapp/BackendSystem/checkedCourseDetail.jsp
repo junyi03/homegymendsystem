@@ -46,7 +46,7 @@
                         <div class="row align-items-center">
                             <div class="col-5">
                                 <div class="mb-3 ms-4">
-                                    <video class="w-100" src="../video.mp4" controls></video>
+                                    <video class="w-100" src="${VideoBean.videoPath}" controls></video>
                                 </div>
                             </div>
                             <div class="col-7">
@@ -86,7 +86,7 @@
                                 <span>${VideoBean.equipment}</span>
                             </li>
                             <li>
-                                <label class="col-sm-2 col-form-label-lg">課程適合程度:</label> 
+                                <label class="col-sm-2 col-form-label-lg">課程適合對象:</label> 
                                 <span>Level${VideoBean.level}</span>
                                 </li>
 <!--                                 <li> -->

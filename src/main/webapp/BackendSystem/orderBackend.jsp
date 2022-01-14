@@ -77,12 +77,12 @@
 	                          <td>${entry.member.memberName}</td>
 	                          
 	                          <c:choose>
-	                          	<c:when test="${entry.orderStatus =='付款完成'}">
+	                          	<c:when test="${entry.orderStatus =='付款成功'}">
 	                          		<td>交易成功</td>
 	                          	</c:when>
-	                          	<c:when test="${entry.orderStatus =='交易失敗'}">
+	                          	<c:otherwise>
 	                          		<td>交易失敗</td>
-	                          	</c:when>
+	                          	</c:otherwise>
 	                          </c:choose>
 	                          
 	                          <td>${entry.orderTime}</td>
@@ -202,7 +202,7 @@
 		            <li class="list-group-item">
 		              <div class="row align-items-center">
 		                <div class="col-4">
-		                  <img class="w-100" src="https://fakeimg.pl/1280x720/" alt="">
+		                  <img class="w-100" src="${course.videoImage} " alt="">
 		                </div>
 		                <div class="col-8">
 		                  <p class="m-0">${course.name}</p>

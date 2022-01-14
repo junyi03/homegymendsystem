@@ -58,7 +58,7 @@
                                     <label for="inputMemberId" class="col-form-label ">審核狀態</label>
                                   </div>
                                   <select class="form-select  ms-3 me-2" aria-label="Default select example" name="status">
-                                    <option selected >請選擇審核狀態</option>
+                                    <option selected  value="2">請選擇審核狀態</option>
                                     <option  value="2">全部</option>
                                     <option value="1">通過</option>
                                     <option value="0">未通過</option>
@@ -71,7 +71,7 @@
                                     <label for="inputMemberId" class="col-form-label ms-2">課程分類</label>
                                   </div>
                                   <select class="form-select ms-3 me-2" aria-label="Default select example" name="partOfBody">
-                                   <option selected>請選擇課程分類</option>
+                                   <option selected value="0">請選擇課程分類</option>
                                    <option value="0" >全部</option>
                                     <option value="全身">全身</option>
                                     <option value="背">背</option>
@@ -168,44 +168,46 @@
 						         <!-- 值 -->
 						       	<c:if test="${pageBean.totalPage > 1}">
 						       		<c:forEach var="page"  begin="1" end="${pageBean.totalPage}" step="1" >
-						       		<c:if test="${ pageBean.currentPage == page}">
-										<li class="page-item active">                  
-						        		<c:choose>
-						        			<c:when  test="${!empty param.inputValue}">
-						        				<a class="page-link" href="<c:url value='${servletPath}?inputValue=${param.inputValue}&checked=${param.checked}&&pageNo=${page}'/>">${page}
-						        				</a>
-						        			</c:when>
-						        	   		<c:when  test="${!empty param.status&&!empty param.partOfBody}">
-						        				<a class="page-link" href="<c:url value='${servletPath}?status=${param.status}&partOfBody=${param.partOfBody}&pageNo=${page}'/>">${page}
-						        				</a>
-						        			</c:when>
-						        			<c:otherwise>
-						        				<a class="page-link"
-														href="<c:url value='${servletPath}?pageNo=${page}'/>">${page}</a>
-						        			</c:otherwise>
-						        		</c:choose> 
-						        		</li></c:if>
+							       		<c:if test="${ pageBean.currentPage == page}">
+											<li class="page-item active">                  
+								        		<c:choose>
+								        			<c:when  test="${!empty param.inputValue}">
+								        				<a class="page-link" href="<c:url value='${servletPath}?inputValue=${param.inputValue}&checked=${param.checked}&&pageNo=${page}'/>">${page}
+								        				</a>
+								        			</c:when>
+								        	   		<c:when  test="${!empty param.status&&!empty param.partOfBody}">
+								        				<a class="page-link" href="<c:url value='${servletPath}?status=${param.status}&partOfBody=${param.partOfBody}&pageNo=${page}'/>">${page}
+								        				</a>
+								        			</c:when>
+								        			<c:otherwise>
+								        				<a class="page-link"
+																href="<c:url value='${servletPath}?pageNo=${page}'/>">${page}</a>
+								        			</c:otherwise>
+								        		</c:choose> 
+							        		</li>
+						        		</c:if>
 						        		
 						        		
 						        		<!-- 分當頁 -->
 						        		<c:if test="${ pageBean.currentPage != page}">
-										<li class="page-item">
-											<c:choose>
-						        				<c:when  test="${!empty param.inputValue}">
-						        				<a class="page-link" href="<c:url value='${servletPath}?inputValue=${param.inputValue}&checked=${param.checked}&&pageNo=${page}'/>">${page}
-						        				</a>
-						        			</c:when>
-						        	   		<c:when  test="${!empty param.status&&!empty param.partOfBody}">
-						        				<a class="page-link" href="<c:url value='${servletPath}?status=${param.status}&partOfBody=${param.partOfBody}&pageNo=${page}'/>">${page}
-						        				</a>
-						        			</c:when>
-						        			<c:otherwise>
-						        				<a class="page-link"
-														href="<c:url value='${servletPath}?pageNo=${page}'/>">${page}
-														</a>
-						        			</c:otherwise>
-						        			</c:choose> 
-										</li></c:if>
+											<li class="page-item">
+												<c:choose>
+							        				<c:when  test="${!empty param.inputValue}">
+							        				<a class="page-link" href="<c:url value='${servletPath}?inputValue=${param.inputValue}&checked=${param.checked}&&pageNo=${page}'/>">${page}
+							        				</a>
+							        			</c:when>
+							        	   		<c:when  test="${!empty param.status&&!empty param.partOfBody}">
+							        				<a class="page-link" href="<c:url value='${servletPath}?status=${param.status}&partOfBody=${param.partOfBody}&pageNo=${page}'/>">${page}
+							        				</a>
+							        			</c:when>
+							        			<c:otherwise>
+							        				<a class="page-link"
+															href="<c:url value='${servletPath}?pageNo=${page}'/>">${page}
+															</a>
+							        			</c:otherwise>
+							        			</c:choose> 
+											</li>
+										</c:if>
 						        		
 						        		
 						        		

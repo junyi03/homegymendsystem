@@ -28,13 +28,6 @@ public class MemberDaoImpl implements MemberDao {
 		Session session = factory.getCurrentSession();
 		List<MemberBean> list = session.createQuery(hql, MemberBean.class).setFirstResult((currentPage - 1) * pageSize)
 				.setMaxResults(pageSize).getResultList();
-		System.out.println("==========");
-		System.out.println(list);
-		for(MemberBean m:list) {
-			System.out.println(m);
-			
-		}
-		
 		return list;
 	}
 	

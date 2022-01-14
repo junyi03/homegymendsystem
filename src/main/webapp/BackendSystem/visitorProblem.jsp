@@ -74,6 +74,7 @@
                           <th scope="col">回覆信箱</th>
                           <th scope="col">訪客名稱</th>
                           <th scope="col">訊息內容</th>
+                          <th scope="col">傳送時間</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -81,7 +82,8 @@
 	                        <tr>
 	                          <td class="w-25 text-center"><a href="mailto:${entry.visitorMail}">${entry.visitorMail}</a></td>
 	                          <td class="w-25 text-center">${entry.visitorName}</td>
-	                          <td class="w-50">${entry.visitorMessage}</td>
+	                          <td class="w-25">${entry.visitorMessage}</td>
+	                          <td class="w-25 text-center">${entry.visitorTime}</td>
 	                        </tr>
                  		</c:forEach>
                        

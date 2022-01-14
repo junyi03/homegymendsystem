@@ -32,8 +32,8 @@ public class VideoBean implements Serializable {
 	private String name;	//課程名
 	@Column(name = "course_info")
 	private String videoInfo;	//課程資訊
-	@Column(name = "category")
-	private String category; //課程類別
+//	@Column(name = "category")
+//	private String category; //課程類別
 	@Column(name = "part_of_body")
 	private String partOfBody; //不確定會用數字還是字串來設定  //運動部位
 	@Column(name = "course_image",columnDefinition = "LONGTEXT")
@@ -134,13 +134,6 @@ public class VideoBean implements Serializable {
 		this.videoInfo = videoInfo;
 	}
 
-	public String getCategory() {
-		return category;
-	}
-
-	public void setCategory(String category) {
-		this.category = category;
-	}
 
 	public String getPartOfBody() {
 		return partOfBody;

@@ -47,7 +47,7 @@
                         <div class="row align-items-center">
                             <div class="col-4">
                                 <div class="mb-3 ms-4">
-                                    <img class="ratio ratio-1x1" src="<c:url value='https://fakeimg.pl/1280x1280/' />" alt="">
+                                    <img class="ratio ratio-1x1" src="<c:url value='${CoachBean.coachImage}' />" alt="">
                                 </div>
                             </div>
                             <div class="col-8">
@@ -62,7 +62,7 @@
                                     </li>
                                     <li>
                                         <label class="col-auto col-form-label-lg me-3">申請時間</label> 
-                                        <span><fmt:formatDate value="${CoachBean.applyTime}" pattern="yyyy-MM-dd HH:mm"></fmt:formatDate></span>
+                                        <span>${CoachBean.applyTime}</span>
                                     </li>
                                     <li>
                                         <label class="col-auto col-form-label-lg me-3">審核時間</label> 
@@ -126,7 +126,7 @@
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-              <img class="ratio ratio-1x1 " src="https://fakeimg.pl/1280x1280/" alt="">
+              <img class="ratio ratio-1x1 " src="${CoachBean.certification }" alt="">
             </div>
           </div>
         </div>
